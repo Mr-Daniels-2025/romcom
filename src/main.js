@@ -84,7 +84,7 @@ function displayFormButtons() {
 function displayHomePage() {
   formPage.classList.add('hidden')
   homePage.classList.remove('hidden')
-  savedPage.clasList.add('hidden')
+  savedPage.classList.add('hidden')
 }
 function displayHomeButtons() {
   homeButton.classList.add('hidden')

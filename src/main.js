@@ -113,6 +113,11 @@ function createCustom() {
   var inputTag1 = userTag1.value
   var inputTag2 = userTag2.value
 
+  covers.push(inputImage)
+  titles.push(inputTitle)
+  descriptors.push(inputTag1)
+  descriptors.push(inputTag2)
+
   coverImage.src = userCover.value
   coverTitle.innerText = userTitle.value
   tag1.innerText = userTag1.value

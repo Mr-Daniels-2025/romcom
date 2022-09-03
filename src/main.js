@@ -1,4 +1,4 @@
-// Create variables targetting the relevant DOM elements here 👇
+// Create variables targeting the relevant DOM elements here 👇
 var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
 var tag1 = document.querySelector('.tagline-1')
@@ -108,15 +108,10 @@ function displaySavedButtons() {
 function createCustom() {
   event.preventDefault()
 
-  var inputImage = userCover.value
-  var inputTitle = userTitle.value
-  var inputTag1 = userTag1.value
-  var inputTag2 = userTag2.value
-
-  covers.push(inputImage)
-  titles.push(inputTitle)
-  descriptors.push(inputTag1)
-  descriptors.push(inputTag2)
+  covers.push(userCover.value)
+  titles.push(userTitle.value)
+  descriptors.push(userTag1.value)
+  descriptors.push(userTag2.value)
 
   coverImage.src = userCover.value
   coverTitle.innerText = userTitle.value

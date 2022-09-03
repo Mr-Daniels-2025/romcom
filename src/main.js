@@ -157,8 +157,6 @@ function save() {
 }
 
 function createCoverElement(para) {
-  //savedSection.innerHTML = "";
-  //for (var i = 0; i < savedCovers.length; i++) {
   var newDiv = document.createElement('div')
   newDiv.setAttribute('id', para.id)
   newDiv.classList.add('mini-cover')
@@ -170,8 +168,5 @@ function createCoverElement(para) {
   <p class='tagline'> A tale of ${para.tagline1} and ${para.tagline2}</p> `
 
   savedSection.appendChild(newDiv)
-//}
+
 }
-
-
-// if(!savedCovers.includes(currentCover)) {

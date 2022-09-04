@@ -46,6 +46,8 @@ homeButton.addEventListener('click', displayHomeButtons)
 saveCoverButton.addEventListener('click', save)
 
 customButton.addEventListener('click', createCustom)
+
+savedPage.addEventListener('dblclick', deleteCover)
 // Create your event handlers and other functions here 👇
 
 // We've provided one function to get you started
@@ -169,4 +171,13 @@ function createCoverElement(para) {
 
   savedSection.appendChild(newDiv)
 
+}
+//4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+function deleteCover() {
+  for(i = 0; i < savedCovers.length; i++) {
+    if(savedCovers[i].id === Number(event.target.parentNode.id)) {
+      savedCovers.splice(i, 1)
+    }
+    viewSavedCovers()
+  }
 }

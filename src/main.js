@@ -48,6 +48,8 @@ viewSavedButton.addEventListener('click', viewSavedCovers)
 homeButton.addEventListener('click', displayHomePage)
 homeButton.addEventListener('click', displayHomeButtons)
 
+customButton.addEventListener('click', createCustomBook) // added back in after I-4. This is an I-3 requirement that was accidentally deleted!
+
 saveCoverButton.addEventListener('click', save) // add in the word "save" for i-3
 
 savedCoverSection.addEventListener('dblclick', deleteSavedCover) // added for I-4
@@ -208,7 +210,9 @@ function createCoverElement(para) {
 
 }
 
-// Iteration-4 .  Create new event listener with "double click" & 'deleteSavedCover'
+// Iteration-4 .  Create new event listener with "double click" &
+// Add a function called 'deleteSavedCover'
+// Then update lines 215 & 216. Finally, get line 220 to match the new var in 216.
  function deleteSavedCover(event){
    var miniCoverID = event.target.parentElement.id
    var miniCoverToDelete = document.getElementById(miniCoverID)

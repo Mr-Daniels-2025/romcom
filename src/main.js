@@ -3,19 +3,19 @@ var coverImage = document.querySelector('.cover-image')
 var coverTitle = document.querySelector('.cover-title')
 var tag1 = document.querySelector('.tagline-1')
 var tag2 = document.querySelector('.tagline-2')
-//~~
+//
 var randomButton = document.querySelector('.random-cover-button')
 var saveCoverButton = document.querySelector('.save-cover-button')
 var viewSavedButton = document.querySelector('.view-saved-button')
 var makeNewButton = document.querySelector('.make-new-button')
 var homeButton = document.querySelector('.home-button')
 var customButton = document.querySelector('.create-new-book-button')
-//~~
+//
 var formPage = document.querySelector('.form-view')
 var homePage = document.querySelector('.home-view')
 var savedPage = document.querySelector('.saved-view')
 var savedSection = document.querySelector('.saved-covers-section')
-//~~
+//
 var userCover = document.querySelector('.user-cover')
 var userTitle = document.querySelector('.user-title')
 var userTag1 = document.querySelector('.user-desc1')
@@ -42,14 +42,14 @@ saveCoverButton.addEventListener('click', save)
 
 customButton.addEventListener('click', createCustom)
 
-savedSection.addEventListener('dblclick', deleteCover)
+savedPage.addEventListener('dblclick', deleteCover)
 // Create your event handlers and other functions here 👇
 
 // We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
-//0~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ITERATION-0
 function makeRandomCover() {
   var randomImage = covers[getRandomIndex(covers)]
   var randomTitle = titles[getRandomIndex(titles)]
@@ -66,7 +66,7 @@ function makeCurrentCover() {
   tag1.innerText = currentCover.tagline1
   tag2.innerText = currentCover.tagline2
 }
-//1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ITERATION-1:
 function displayFormPage() {
   formPage.classList.remove('hidden')
   homePage.classList.add('hidden')
@@ -77,7 +77,7 @@ function displayFormButtons() {
   randomButton.classList.add('hidden')
   saveCoverButton.classList.add('hidden')
 }
-//~~
+//
 function displayHomePage() {
   formPage.classList.add('hidden')
   homePage.classList.remove('hidden')
@@ -89,7 +89,7 @@ function displayHomeButtons() {
   saveCoverButton.classList.remove('hidden')
   viewSavedButton.classList.remove('hidden')
 }
-//~~
+//ITERATION:
 function displaySavedPage() {
   formPage.classList.add('hidden')
   homePage.classList.add('hidden')
@@ -101,7 +101,7 @@ function displaySavedButtons() {
   saveCoverButton.classList.add('hidden')
   viewSavedButton.classList.add('hidden')
 }
-//2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ITERATION-2:
 function createCustom() {
   event.preventDefault()
 
@@ -127,7 +127,7 @@ function returnHome() {
   randomButton.classList.remove('hidden')
   saveCoverButton.classList.remove('hidden')
 }
-//3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ITERATION-3:
 function viewSavedCovers() {
   savedSection.innerHTML = "";
   for (var i = 0; i < savedCovers.length; i++) {
@@ -169,16 +169,15 @@ function createCoverElement(para) {
 
 }
 
-
-//4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//ITERATION-4:
 function deleteCover(event) {
-  var miniCoverID = event.target.parentElement.id
+  var miniCoverID = event.target.id
 
   var miniCoverToDelete = document.getElementById(miniCoverID)
   miniCoverToDelete.remove();
 
   for(i = 0; i < savedCovers.length; i++) {
-    if(savedCovers[i].id == miniCoverID.id) {
+    if(savedCovers[i].id == miniCoverID) {
       savedCovers.splice(i, 1)
 
     }

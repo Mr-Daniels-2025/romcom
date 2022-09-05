@@ -50,7 +50,7 @@ homeButton.addEventListener('click', displayHomeButtons)
 
 saveCoverButton.addEventListener('click', save) // add in the word "save" for i-3
 
-customButton.addEventListener('click', createCustom)
+savedCoverSection.addEventListener('dblclick', deleteSavedCover) // added for I-4
 
 // Create your event handlers and other functions here 👇
 function getRandomIndex(array) {
@@ -207,3 +207,6 @@ function createCoverElement(para) {
   savedSection.appendChild(newDiv)
 
 }
+
+// Iteration-4 .  Create new event listener with "double click" & 'deleteSavedCover'
+ 

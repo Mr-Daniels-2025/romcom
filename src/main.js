@@ -215,7 +215,7 @@ function createCoverElement(para) {
    for(var i = 0; i< savedCovers.length; i++){
      if(savedCovers[i].id.toString() === miniCoverID.id) {
        savedCovers.splice(i, 1)
-       miniCoverID.remove()
+       miniCoverToDelete.remove()
      }
 
    }

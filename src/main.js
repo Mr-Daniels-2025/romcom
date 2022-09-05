@@ -210,7 +210,8 @@ function createCoverElement(para) {
 
 // Iteration-4 .  Create new event listener with "double click" & 'deleteSavedCover'
  function deleteSavedCover(event){
-   miniCoverID = event.target.parentElement
+   var miniCoverID = event.target.parentElement.id
+   var miniCoverToDelete = document.getElementById(miniCoverID)
    for(var i = 0; i< savedCovers.length; i++){
      if(savedCovers[i].id.toString() === miniCoverID.id) {
        savedCovers.splice(i, 1)

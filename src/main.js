@@ -20,8 +20,11 @@ var userCover = document.querySelector('.user-cover')
 var userTitle = document.querySelector('.user-title')
 var userTag1 = document.querySelector('.user-desc1')
 var userTag2 = document.querySelector('.user-desc2')
+
 // We've provided a few variables below
+
 var savedCovers = [];
+
 var currentCover;
 
 // Add your event listeners here 👇
@@ -35,6 +38,7 @@ makeNewButton.addEventListener('click', displayFormButtons)
 
 viewSavedButton.addEventListener('click', viewSavedCovers)
 
+
 homeButton.addEventListener('click', displayHomePage)
 homeButton.addEventListener('click', displayHomeButtons)
 
@@ -42,14 +46,18 @@ saveCoverButton.addEventListener('click', save)
 
 customButton.addEventListener('click', createCustom)
 
+
 savedSection.addEventListener('dblclick', deleteCover)
+
 // Create your event handlers and other functions here 👇
 
 // We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
 //ITERATION-0
+
 function makeRandomCover() {
   var randomImage = covers[getRandomIndex(covers)]
   var randomTitle = titles[getRandomIndex(titles)]
@@ -66,7 +74,9 @@ function makeCurrentCover() {
   tag1.innerText = currentCover.tagline1
   tag2.innerText = currentCover.tagline2
 }
+
 //ITERATION-1:
+
 function displayFormPage() {
   formPage.classList.remove('hidden')
   homePage.classList.add('hidden')
@@ -77,7 +87,10 @@ function displayFormButtons() {
   randomButton.classList.add('hidden')
   saveCoverButton.classList.add('hidden')
 }
-//
+
+
+//~~
+
 function displayHomePage() {
   formPage.classList.add('hidden')
   homePage.classList.remove('hidden')
@@ -89,7 +102,9 @@ function displayHomeButtons() {
   saveCoverButton.classList.remove('hidden')
   viewSavedButton.classList.remove('hidden')
 }
+
 //ITERATION:
+
 function displaySavedPage() {
   formPage.classList.add('hidden')
   homePage.classList.add('hidden')
@@ -101,7 +116,9 @@ function displaySavedButtons() {
   saveCoverButton.classList.add('hidden')
   viewSavedButton.classList.add('hidden')
 }
+
 //ITERATION-2:
+
 function createCustom() {
   event.preventDefault()
 
@@ -127,10 +144,12 @@ function returnHome() {
   randomButton.classList.remove('hidden')
   saveCoverButton.classList.remove('hidden')
 }
+
 //ITERATION-3:
 function viewSavedCovers() {
   savedSection.innerHTML = "";
   for (var i = 0; i < savedCovers.length; i++) {
+
     createCoverElement(savedCovers[i])
   }
   homePage.classList.add('hidden')
@@ -143,7 +162,9 @@ function viewSavedCovers() {
 
 function save() {
   var isSaved = false
+
   for (var i = 0; i < savedCovers.length; i++) {
+
     if (currentCover.id === savedCovers[i].id) {
       isSaved = true
     }
@@ -152,7 +173,6 @@ function save() {
     savedCovers.push(currentCover)
   }
 }
-
 
 function createCoverElement(para) {
   var newDiv = document.createElement('div')
@@ -169,19 +189,22 @@ function createCoverElement(para) {
 
 }
 
+
 //ITERATION-4:
 function deleteCover(event) {
-
-  //var miniCoverID = event.target.id
-
-  //var miniCoverToDelete = document.getElementById(miniCoverID)
-  //miniCoverToDelete.remove();
 
   for(i = 0; i < savedCovers.length; i++) {
     if(savedCovers[i].id === Number(event.target.parentNode.id)) {
       savedCovers.splice(i, 1)
 
-    }
-    viewSavedCovers()
-  }
-}
+
+
+// function deleteCover() {
+//  for(i = 0; i < savedCovers.length; i++) {
+//    if(savedCovers[i].id === Number(event.target.parentNode.id)) {
+//      savedCovers.splice(i, 1)
+
+//    }
+//    viewSavedCovers()
+//  }
+//}
